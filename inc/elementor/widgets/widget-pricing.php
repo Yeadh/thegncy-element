@@ -142,7 +142,7 @@ class thegncy_Widget_Pricing extends Widget_Base {
       
       //Inline Editing
       $this->add_inline_editing_attributes( 'title', 'basic' );
-      $this->add_inline_editing_attributes( 'text', 'basic' );
+      $this->add_inline_editing_attributes( 'description', 'basic' );
       $this->add_inline_editing_attributes( 'package', 'basic' );
       $this->add_inline_editing_attributes( 'feature_list', 'basic' );
       $this->add_inline_editing_attributes( 'percentage', 'basic' );
@@ -157,7 +157,7 @@ class thegncy_Widget_Pricing extends Widget_Base {
              </ul>
              <h6><?php echo esc_html($settings['package']); ?> <?php echo esc_html__( 'Package', 'thegncy' ); ?></h6>
              <span>$</span><h1 class="totalPrice">00</h1>
-             <p><?php echo esc_html($settings['text']); ?></p>
+             <p><?php echo esc_html($settings['description']); ?></p>
              <a href="<?php echo esc_url($settings['url']) ?>"><?php echo esc_html($settings['button']) ?></a>
          </div>
          <div class="pricing-features">
