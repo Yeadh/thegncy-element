@@ -46,21 +46,20 @@ class thegncy_ElementorCustomElement {
  
     // We check if the Elementor plugin has been installed / activated.
     if(defined('ELEMENTOR_PATH') && class_exists('Elementor\Widget_Base')){
-
-         get_template_part( 'inc/elementor/widgets/widget', 'title' );
-         get_template_part( 'inc/elementor/widgets/widget', 'tiltimage' );
-         get_template_part( 'inc/elementor/widgets/widget', 'contacts' );
-         get_template_part( 'inc/elementor/widgets/widget', 'pricing' );
-         get_template_part( 'inc/elementor/widgets/widget', 'counter' );
-         get_template_part( 'inc/elementor/widgets/widget', 'service' );
-         get_template_part( 'inc/elementor/widgets/widget', 'feature' );
-         get_template_part( 'inc/elementor/widgets/widget', 'portfolio' );
-         get_template_part( 'inc/elementor/widgets/widget', 'portfolioitem' );
-         get_template_part( 'inc/elementor/widgets/widget', 'testimonials' );
-         get_template_part( 'inc/elementor/widgets/widget', 'progress' );
-         get_template_part( 'inc/elementor/widgets/widget', 'team' );
-         get_template_part( 'inc/elementor/widgets/widget', 'blog' );
-         get_template_part( 'inc/elementor/widgets/widget', 'button' );
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-title.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-tiltimage.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-contacts.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-pricing.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-counter.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-service.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-feature.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-portfolio.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-portfolioitem.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-testimonials.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-progress.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-team.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-blog.php');
+         include_once(plugin_dir_path( __FILE__ ).'/widgets/widget-button.php');
       }
 	}
 
