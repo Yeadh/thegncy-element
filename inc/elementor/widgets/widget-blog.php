@@ -76,7 +76,7 @@ class thegncy_Widget_Blog extends Widget_Base {
                         <a href="<?php the_permalink() ?>"><h5><?php echo wp_trim_words( get_the_title(), 7, '...' );?></h5></a>
                         <ul class="list-inline">
                            <li class="list-inline-item">
-                              Tags: <?php the_tags( ', ') ?>
+                              Tags: <?php the_tags( ' ', ', ',' ') ?>
                            </li>
                            <li class="list-inline-item float-right">
                               Read: <?php echo TheGncygetPostViews(get_the_ID()); ?>

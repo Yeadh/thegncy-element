@@ -9,12 +9,16 @@ if( !class_exists('thegncy_Recent_Post') ){
 		 * Register widget with WordPress.
 		 */
 		function __construct(){
+
 			$widget_options = array(
 				'description' 					=> esc_html__('TheGncy recent post here', 'thegncy'), 
 				'customize_selective_refresh' 	=> true,
 			);
+
 			parent:: __construct('thegncy_Recent_Post', esc_html__( 'Recent Post : TheGncy', 'thegncy'), $widget_options );
+
 		}
+		
 		/**
 		 * Front-end display of widget.
 		 *
@@ -24,81 +28,49 @@ if( !class_exists('thegncy_Recent_Post') ){
 		 * @param array $instance Saved values from database.
 		 */
 		public function widget($args, $instance){
+
 			if ( ! isset( $args['widget_id'] ) ) {
+
 			$args['widget_id'] = $this->id;
+
 		}
 		
 		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : esc_html__( 'Recent Posts','thegncy' );
 		
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+
 		$show_item = ( ! empty( $instance['show_item'] ) ) ? absint( $instance['show_item'] ) : 3;
-			echo thegncy_escaped($args['before_widget']); 
+
+
+			echo $args['before_widget']; 
 			if ( $title ): 
-		    echo thegncy_escaped($args['before_title']);  
+		    echo $args['before_title'];  
 			echo esc_attr( $title );  
-		 	echo thegncy_escaped($args['after_title']); 
+		 	echo $args['after_title']; 
 			endif;
+
 				$posts = new WP_Query(array(
 					'post_type'      => 'post',
 					'posts_per_page' => $show_item,
 					'ignore_sticky_posts' => true,
 				));
+
 				?>
 
-                <ul>
-            	<?php
-				while($posts->have_posts()) : $posts->the_post();  ?>
-                    <li>
-                        <?php the_post_thumbnail( 'thegncy-65-65', array( 'class' => 'alignleft')); ?>
-                        <span><?php echo get_the_date( 'd M Y' ) ?></span>
-                        <p><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></p>
-                    </li>
+                <ul class="recent-posts">
+               <?php while($posts->have_posts()) : $posts->the_post();  ?>
+	               	<li>
+	               		<a href="<?php the_permalink(); ?>">
+	                        <?php the_post_thumbnail( 'thegncy-65-65' ); ?>
+	                        <span><?php echo get_the_date( 'd M Y' ) ?></span><br>
+	                        <p><?php the_title() ?></p>
+	                	</a>
+	                </li>
 				<?php endwhile; ?>
-
-                    <li>
-                        <a href="single.html">
-                            <img src="images/thumb-1.png" alt="Thumb">
-                            <span>31 Dec 2018</span><br>
-                            <p>Boost your business hiring a good UX writer</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="single.html">
-                            <img src="images/thumb-2.png" alt="Thumb">
-                            <span>31 Dec 2018</span><br>
-                            <p>Boost your business hiring a good UX writer</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="single.html">
-                            <img src="images/thumb-3.png" alt="Thumb">
-                            <span>31 Dec 2018</span><br>
-                            <p>Boost your business hiring a good UX writer</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="single.html">
-                            <img src="images/thumb-4.png" alt="Thumb">
-                            <span>31 Dec 2018</span><br>
-                            <p>Boost your business hiring a good UX writer</p>
-                        </a>
-                    </li>
-                </ul>
-
-				<div class="recent-post-widget">
-                    <ul class="recent-posts">
-                    <?php
-					while($posts->have_posts()) : $posts->the_post();  ?>
-                        <li>
-                            <p><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thegncy-recent-post-80x80', array( 'class' => 'alignleft')); ?><?php the_title( ); ?></a></p>
-                            <span><?php echo get_the_date( 'd M Y' ) ?></span>
-                        </li>
-					<?php endwhile; ?>
-                    </ul><!-- end latest-tweet -->
-                </div><!-- end twitter-widget -->
+                </ul><!-- end latest-tweet -->
 
 
-			<?php echo thegncy_escaped($args['after_widget']); ?>
+			<?php echo $args['after_widget']; ?>
 			
 			<?php wp_reset_postdata();
 		}
@@ -118,6 +90,7 @@ if( !class_exists('thegncy_Recent_Post') ){
 			$instance['show_item'] = (int) $new_instance['show_item'];
 			return $instance;
 		}
+
 	 	/**
 		 * Back-end widget form.
 		 *
@@ -125,6 +98,7 @@ if( !class_exists('thegncy_Recent_Post') ){
 		 *
 		 * @param array $instance Previously saved values from database.
 		 */
+
 		public function form( $instance ) {
 		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_item    = isset( $instance['show_item'] ) ? absint( $instance['show_item'] ) : 4;
@@ -142,6 +116,9 @@ if( !class_exists('thegncy_Recent_Post') ){
 		}
 	}
 }
+
+
+
 // register Contact  Widget widget
 function thegncy_Recent_Post(){
 	register_widget('thegncy_Recent_Post');
