@@ -14,5 +14,7 @@
 /**----------------------------------------------------------------*/
 /* Include all file
 /*-----------------------------------------------------------------*/  
+
 include_once(dirname( __FILE__ ). '/inc/custom-posts.php');
 include_once(dirname( __FILE__ ). '/inc/elementor/elementor.php');
+include_once(dirname( __FILE__ ). '/inc/recent-post.php');
