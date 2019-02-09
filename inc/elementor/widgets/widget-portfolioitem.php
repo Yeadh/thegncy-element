@@ -25,7 +25,7 @@ class thegncy_Widget_Portfolio_Item extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'portfolio_section',
+         'portfolio_item_section',
          [
             'label' => esc_html__( 'Portfolio Item', 'thegncy' ),
             'type' => Controls_Manager::SECTION,
@@ -38,7 +38,6 @@ class thegncy_Widget_Portfolio_Item extends Widget_Base {
             'label' => esc_html__( 'Portfolio Item', 'thegncy' ),
             'type' => Controls_Manager::SELECT2, 
             'title' => esc_html__( 'Select a portfolio', 'thegncy' ),
-            'section' => 'portfolio_section',
             'options' => thegncy_get_portfolio_dropdown_array([
               'post_type' => 'portfolio',
             ]),
