@@ -25,7 +25,7 @@ class thegncy_Widget_Portfolio_Item extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'portfolio_item_section',
+         'portfolio_section',
          [
             'label' => esc_html__( 'Portfolio Item', 'thegncy' ),
             'type' => Controls_Manager::SECTION,

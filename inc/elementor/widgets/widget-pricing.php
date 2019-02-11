@@ -3,7 +3,7 @@ namespace Elementor;
  
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-// progress
+// Pricing
 class thegncy_Widget_Pricing extends Widget_Base {
  
    public function get_name() {
@@ -25,7 +25,7 @@ class thegncy_Widget_Pricing extends Widget_Base {
    protected function _register_controls() {
 
       $this->start_controls_section(
-         'service_section',
+         'pricing_section',
          [
             'label' => esc_html__( 'Pricing Plan', 'thegncy' ),
             'type' => Controls_Manager::SECTION,
