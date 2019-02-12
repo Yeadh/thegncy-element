@@ -112,8 +112,7 @@ class thegncy_Widget_Banner extends Widget_Base {
       $button->add_control(
          'btn_text', [
             'label' => __( 'Text', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::ICON,
-            'label_block' => true,
+            'type' => \Elementor\Controls_Manager::TEXT,
             'default' => __('Learn More','thegncy')
          ]
       );
@@ -151,8 +150,7 @@ class thegncy_Widget_Banner extends Widget_Base {
       $counter->add_control(
          'counter_text', [
             'label' => __( 'Text', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::ICON,
-            'label_block' => true,
+            'type' => \Elementor\Controls_Manager::TEXT,
             'default' => __('Projects done','thegncy')
          ]
       );
