@@ -147,9 +147,7 @@ class thegncy_Widget_Pricing extends Widget_Base {
       $this->add_inline_editing_attributes( 'feature_list', 'basic' );
       $this->add_inline_editing_attributes( 'percentage', 'basic' );
       ?>
-
-      <p class="progress-title"><?php echo esc_html($settings['title']); ?></p>
-
+      
      <div class="pricing-item">
          <div class="pricing-card">
              <ul class="list-inline package-btn">
