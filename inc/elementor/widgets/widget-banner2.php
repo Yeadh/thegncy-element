@@ -73,7 +73,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
       $this->add_control(
          'btn_text', [
             'label' => __( 'Text', 'thegncy' ),
-            'type' => \Elementor\Controls_Manager::ICON,
+            'type' => \Elementor\Controls_Manager::TEXT,
             'label_block' => true,
             'default' => __('Learn More','thegncy')
          ]
@@ -106,7 +106,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
       <section id="banner" class="banner-3">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 d-none">
+                <div class="col-xl-6 d-none d-xl-block">
                     <div class="banner-3-content">
                         <span><?php echo esc_html($settings['subtitle']); ?></span>
                         <h1><?php echo esc_html($settings['title']); ?></h1>
@@ -114,7 +114,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
                         <a href="<?php echo esc_url($settings['btn_url']); ?>"><?php echo esc_html($settings['btn_text']); ?></a>
                     </div>
                 </div>
-                <div class="col-md-6 d-sm-block d-xl-none">
+                <div class="col-lg-7 d-block d-lg-block d-sm-block d-xl-none">
                     <div class="banner-3-content">
                         <span><?php echo esc_html($settings['subtitle']); ?></span>
                         <h1><?php echo esc_html($settings['title']); ?></h1>
