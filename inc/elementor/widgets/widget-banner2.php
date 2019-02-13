@@ -106,7 +106,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
       <section id="banner" class="banner-3">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 d-none d-xl-block">
+                <div class="col-xl-6 d-none">
                     <div class="banner-3-content">
                         <span><?php echo esc_html($settings['subtitle']); ?></span>
                         <h1><?php echo esc_html($settings['title']); ?></h1>
@@ -114,7 +114,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
                         <a href="<?php echo esc_url($settings['btn_url']); ?>"><?php echo esc_html($settings['btn_text']); ?></a>
                     </div>
                 </div>
-                <div class="col-lg-12 d-block d-lg-block d-sm-block d-xl-none">
+                <div class="col-md-6 d-sm-block d-xl-none">
                     <div class="banner-3-content">
                         <span><?php echo esc_html($settings['subtitle']); ?></span>
                         <h1><?php echo esc_html($settings['title']); ?></h1>
@@ -129,7 +129,7 @@ class thegncy_Widget_BannerParallax extends Widget_Base {
             if ($settings['image']['id']) { 
                echo wp_get_attachment_url( $settings['image']['id'], 'full' );
             } else {
-               echo get_template_directory_uri().'/img/bnr-shape.png';
+               echo get_template_directory_uri().'/img/illustration.png';
             } ?>" alt="images">
         </div>
    </section>

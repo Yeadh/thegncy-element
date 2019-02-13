@@ -159,7 +159,7 @@ class thegncy_Widget_BannerPop extends Widget_Base {
             if ($settings['image']['id']) { 
                echo wp_get_attachment_url( $settings['image']['id'], 'full' );
             } else {
-               echo get_template_directory_uri().'/img/illustration.png';
+               echo get_template_directory_uri().'/img/bnr-popup.png';
             } ?>" alt="images">
           <div class="banner4_vicon">
             <a class="popup-youtube" href="<?php echo esc_url( $settings['video'] ) ?>"><img src="<?php echo get_template_directory_uri().'/img/video.png'?>" alt="Play"></a>
