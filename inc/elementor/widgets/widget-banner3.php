@@ -126,7 +126,7 @@ class thegncy_Widget_BannerPop extends Widget_Base {
       <section id="banner" class="banner-4">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 d-none d-xl-block">
+                <div class="col-xl-6 d-none d-xl-block">
                     <div class="banner-3-content">
                       <h1><?php echo esc_html($settings['title']); ?></h1>
                       <p><?php echo esc_html($settings['description']); ?></p>
