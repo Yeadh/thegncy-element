@@ -126,7 +126,7 @@ class thegncy_Widget_BannerPop extends Widget_Base {
       <section id="banner" class="banner-4">
         <div class="container">
             <div class="row">
-                <div class="col-xl-6 d-none d-xl-block">
+                <div class="col-lg-6 d-none d-xl-block">
                     <div class="banner-3-content">
                       <h1><?php echo esc_html($settings['title']); ?></h1>
                       <p><?php echo esc_html($settings['description']); ?></p>
@@ -161,9 +161,11 @@ class thegncy_Widget_BannerPop extends Widget_Base {
             } else {
                echo get_template_directory_uri().'/img/bnr-popup.png';
             } ?>" alt="images">
-          <div class="banner4_vicon">
-            <a class="popup-youtube" href="<?php echo esc_url( $settings['video'] ) ?>"><img src="<?php echo get_template_directory_uri().'/img/video.png'?>" alt="Play"></a>
-          </div>
+
+            <a class="popup-video" href="<?php echo esc_url( $settings['video'] ) ?>">
+              <span class="aboutme_image_icon"><i class="fa fa-play"></i></span>
+            </a>
+
         </div>
       </section>
 
